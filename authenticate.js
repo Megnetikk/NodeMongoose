@@ -38,7 +38,7 @@ exports.jwtPassport = passport.use(
 );
 
 exports.verifyAdmin = (req, res, next) => {
-    if (isRetryableWriteError.user && req.user.admin) {
+    if (req.user.admin) {
         return next();
     } else {
         err.status = 403;
